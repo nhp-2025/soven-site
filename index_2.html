@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soven · Source Governance for Newsrooms</title>
+<meta name="description" content="Soven is a browser extension that records the sources behind every story as reporters work. Reporters approve each record. The newsroom owns the repository.">
+<link rel="canonical" href="https://usesoven.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap">
+<meta name="theme-color" content="#B3343B">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Soven">
+<meta property="og:url" content="https://usesoven.com/">
+<meta property="og:title" content="Soven · Source Governance for Newsrooms">
+<meta property="og:description" content="Know who your newsroom quotes. A browser extension that records sources as reporters work, with a reporter approving every record.">
+<meta property="og:image" content="https://usesoven.com/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Soven: source governance for newsrooms">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Soven · Source Governance for Newsrooms">
+<meta name="twitter:description" content="Know who your newsroom quotes. A browser extension that records sources as reporters work, with a reporter approving every record.">
+<meta name="twitter:image" content="https://usesoven.com/og.jpg">
+
+<style>
+
+:root{
+  --bg:#F9F7F4; --surface:#FFFFFF; --ink:#1F1D1B; --muted:#5F5A54; --line:#E4DFD8;
+  --accent:#B3343B; --accent-ink:#FFFFFF; --accent-soft:#F4E4E3;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#171514; --surface:#211E1C; --ink:#F2EEE9; --muted:#B4ADA5; --line:#38332F;
+    --accent:#E0646A; --accent-ink:#171514; --accent-soft:#3A2324;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#171514; --surface:#211E1C; --ink:#F2EEE9; --muted:#B4ADA5; --line:#38332F;
+  --accent:#E0646A; --accent-ink:#171514; --accent-soft:#3A2324;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--accent)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+@media (min-width:720px){.wrap{padding:0 32px}}
+
+header{padding:24px 0}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font:600 24px/1 "Playfair Display",Georgia,serif}
+.brand img{width:30px;height:30px}
+.nav-cta{font-weight:600;font-size:15px;text-decoration:none;color:var(--accent);white-space:nowrap}
+
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;font-weight:600;line-height:1.15;margin:0}
+.hero{padding-top:56px;padding-bottom:64px}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 16px}
+.hero h1{font-size:clamp(38px,7vw,68px);max-width:14ch}
+.hero p.lede{font-size:clamp(18px,2.2vw,21px);color:var(--muted);max-width:56ch;margin:24px 0 32px}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;padding:14px 22px;border-radius:8px}
+.btn:hover{filter:brightness(1.08)}
+.btn:focus-visible,.nav-cta:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+
+section{padding:56px 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(28px,4vw,38px);margin-bottom:12px}
+section p.intro{color:var(--muted);max-width:60ch;margin:0 0 32px}
+
+.steps{display:grid;gap:16px;grid-template-columns:1fr;counter-reset:s;list-style:none;padding:0;margin:0}
+@media (min-width:720px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:980px){.steps{grid-template-columns:repeat(4,1fr)}}
+.steps li{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px}
+.steps li::before{counter-increment:s;content:counter(s);display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:600;font-size:14px;margin-bottom:14px}
+.steps h3{font-size:21px;margin-bottom:8px}
+.steps p{margin:0;color:var(--muted);font-size:16px}
+
+.two{display:grid;gap:32px;grid-template-columns:1fr}
+@media (min-width:820px){.two{grid-template-columns:1fr 1fr;gap:48px}}
+ul.checks{list-style:none;padding:0;margin:0}
+ul.checks li{padding:12px 0 12px 30px;border-bottom:1px solid var(--line);position:relative}
+ul.checks li::before{content:"";position:absolute;left:4px;top:21px;width:10px;height:10px;border-radius:2px;background:var(--accent)}
+ul.checks strong{font-weight:600}
+
+.proof{display:grid;gap:16px;grid-template-columns:1fr}
+@media (min-width:720px){.proof{grid-template-columns:repeat(3,1fr)}}
+.proof div{border-left:3px solid var(--accent);padding:4px 0 4px 16px}
+.proof b{display:block;font:600 22px/1.25 "Playfair Display",Georgia,serif;margin-bottom:6px}
+.proof span{color:var(--muted);font-size:15px}
+
+.cta{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:32px 24px;text-align:left}
+@media (min-width:720px){.cta{padding:48px}}
+.cta p{color:var(--muted);max-width:58ch;margin:12px 0 24px}
+
+footer{padding:32px 0 48px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Soven home"><img src="/favicon.svg" alt="" width="30" height="30">Soven</a>
+    <a class="nav-cta" href="mailto:hello@usesoven.com?subject=Soven%20pilot">Request a pilot →</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <p class="eyebrow">Source governance for newsrooms</p>
+    <h1>Know who your newsroom quotes.</h1>
+    <p class="lede">Soven is a browser extension that records the sources behind every story as reporters work. A reporter approves each record. Editors get a source repository the newsroom owns, and a clear picture of whose voices make it into the coverage.</p>
+    <a class="btn" href="mailto:hello@usesoven.com?subject=Soven%20pilot">Request a pilot</a>
+  </div>
+
+  <section id="how">
+    <div class="wrap">
+      <h2>How It Works</h2>
+      <p class="intro">Reporters don't adopt manual tagging, so Soven reads the story and does the first pass. The reporter stays in charge of every record.</p>
+      <ol class="steps">
+        <li><h3>Capture</h3><p>Soven reads the draft or published story in the browser and suggests each person quoted, with role and context.</p></li>
+        <li><h3>Approve</h3><p>The reporter confirms or corrects each source. Every field the model fills in shows a confidence score.</p></li>
+        <li><h3>Match</h3><p>Soven recognizes sources the newsroom has used before and links them, so one person is one record across stories.</p></li>
+        <li><h3>Report</h3><p>Editors see the newsroom's sourcing in one place: who appears, how often, and who's missing.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="editors">
+    <div class="wrap two">
+      <div>
+        <h2>What Editors See</h2>
+        <p class="intro">A newsroom-level rollup built from records reporters have already approved, not a one-time audit that goes stale.</p>
+      </div>
+      <ul class="checks">
+        <li><strong>Repeat sources</strong> and how often the newsroom returns to them</li>
+        <li><strong>On- vs. off-record</strong> counts by beat and reporter</li>
+        <li><strong>Institutional vs. community voices</strong> in the coverage</li>
+        <li><strong>Representation</strong> across the people quoted, configured by the newsroom</li>
+        <li><strong>Gaps:</strong> communities and perspectives that never appear</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="data">
+    <div class="wrap two">
+      <div>
+        <h2>Your Sources Stay Yours</h2>
+        <p class="intro">Source records are sensitive. Soven is built around that.</p>
+      </div>
+      <ul class="checks">
+        <li><strong>The newsroom owns its repository.</strong> Soven holds records only to run the service.</li>
+        <li><strong>Each newsroom's records are kept separate</strong> unless the organization chooses to combine them.</li>
+        <li><strong>Export or delete at any time,</strong> and at the end of a contract.</li>
+        <li><strong>A person approves every record.</strong> Nothing enters the repository on the model's word alone.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="proof">
+    <div class="wrap">
+      <h2>Where It Comes From</h2>
+      <p class="intro">Soven was built by Natalie Holly Purviance, a journalist and civic technologist in Atlanta, and tested with working reporters from the start.</p>
+      <div class="proof">
+        <div><b>CUNY Newmark AI Journalism Lab</b><span>Built during the Lab's 2026 Builders cohort.</span></div>
+        <div><b>Nordic AI Journalism showcase</b><span>One of 4 projects selected from a cohort of 24, September 2026.</span></div>
+        <div><b>In newsroom use</b><span>Reporters at two newsrooms have used it on published stories since September 2026.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pilot">
+    <div class="wrap">
+      <div class="cta">
+        <h2>Run a Pilot</h2>
+        <p>Pilots run across one or more newsrooms, include onboarding and support, and end with a source audit report for leadership. Tell us about your newsroom and we'll set up a demo.</p>
+        <a class="btn" href="mailto:hello@usesoven.com?subject=Soven%20pilot">hello@usesoven.com</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Soven Labs · Atlanta, Georgia</span>
+    <a href="mailto:hello@usesoven.com">hello@usesoven.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
