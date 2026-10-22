@@ -63,6 +63,7 @@ h1,h2,h3{font-family:"Playfair Display",Georgia,serif;font-weight:600;line-heigh
 .hero p.lede{font-size:clamp(18px,2.2vw,21px);color:var(--muted);max-width:56ch;margin:24px 0 32px}
 .btn{display:inline-block;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;padding:14px 22px;border-radius:8px}
 .btn:hover{filter:brightness(1.08)}
+button.btn{border:0;cursor:pointer;font:inherit;font-weight:600}
 .btn:focus-visible,.nav-cta:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 
 section{padding:56px 0;border-top:1px solid var(--line)}
@@ -175,8 +176,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
     <div class="wrap">
       <div class="cta">
         <h2>Run a Pilot</h2>
-        <p>Pilots run across one or more newsrooms, include onboarding and support, and end with a source audit report for leadership. Email <strong>hello@usesoven.com</strong> with your newsroom's name and what you'd like to learn about your sourcing, and we'll set up a demo.</p>
-        <a class="btn" href="mailto:hello@usesoven.com?subject=soven%20pilot">Email us</a>
+        <p>Pilots run across one or more newsrooms, include onboarding and support, and end with a source audit report for leadership. Email <a href="mailto:hello@usesoven.com?subject=soven%20pilot"><strong>hello@usesoven.com</strong></a> with your newsroom's name and what you'd like to learn about your sourcing, and we'll set up a demo.</p>
+        <button class="btn" type="button" id="copy-email" data-email="hello@usesoven.com">Copy email address</button>
       </div>
     </div>
   </section>
@@ -189,5 +190,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
   </div>
 </footer>
 
+<script>
+document.getElementById("copy-email").addEventListener("click",function(){var b=this,e=b.dataset.email;function done(){b.textContent="Copied: "+e;setTimeout(function(){b.textContent="Copy email address"},2500)}if(navigator.clipboard){navigator.clipboard.writeText(e).then(done,function(){prompt("Copy this address:",e)})}else{prompt("Copy this address:",e)}});
+</script>
 </body>
 </html>
