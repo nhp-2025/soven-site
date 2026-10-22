@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Soven · Source Governance for Newsrooms</title>
-<meta name="description" content="Soven is a browser extension that records the sources behind every story as reporters work. Reporters approve each record. The newsroom owns the repository.">
+<title>soven · Source Governance for Newsrooms</title>
+<meta name="description" content="soven is a browser extension that records the sources behind every story as reporters work. Reporters approve each record. The newsroom owns the repository.">
 <link rel="canonical" href="https://usesoven.com/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,16 +13,16 @@
 <meta name="theme-color" content="#B3343B">
 
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Soven">
+<meta property="og:site_name" content="soven">
 <meta property="og:url" content="https://usesoven.com/">
-<meta property="og:title" content="Soven · Source Governance for Newsrooms">
+<meta property="og:title" content="soven · Source Governance for Newsrooms">
 <meta property="og:description" content="Know who your newsroom quotes. A browser extension that records sources as reporters work, with a reporter approving every record.">
 <meta property="og:image" content="https://usesoven.com/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Soven: source governance for newsrooms">
+<meta property="og:image:alt" content="soven: source governance for newsrooms">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Soven · Source Governance for Newsrooms">
+<meta name="twitter:title" content="soven · Source Governance for Newsrooms">
 <meta name="twitter:description" content="Know who your newsroom quotes. A browser extension that records sources as reporters work, with a reporter approving every record.">
 <meta name="twitter:image" content="https://usesoven.com/og.jpg">
 
@@ -44,7 +44,7 @@
 }
 
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
 a{color:var(--accent)}
 .wrap{max-width:1040px;margin:0 auto;padding:0 16px}
@@ -102,8 +102,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 
 <header>
   <div class="wrap">
-    <a class="brand" href="/" aria-label="Soven home"><img src="/favicon.svg" alt="" width="30" height="30">Soven</a>
-    <a class="nav-cta" href="mailto:hello@usesoven.com?subject=Soven%20pilot">Request a pilot →</a>
+    <a class="brand" href="/" aria-label="soven home"><img src="/favicon.svg" alt="" width="30" height="30">soven</a>
+    <a class="nav-cta" href="#pilot">Request a pilot →</a>
   </div>
 </header>
 
@@ -111,18 +111,18 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
   <div class="wrap hero">
     <p class="eyebrow">Source governance for newsrooms</p>
     <h1>Know who your newsroom quotes.</h1>
-    <p class="lede">Soven is a browser extension that records the sources behind every story as reporters work. A reporter approves each record. Editors get a source repository the newsroom owns, and a clear picture of whose voices make it into the coverage.</p>
-    <a class="btn" href="mailto:hello@usesoven.com?subject=Soven%20pilot">Request a pilot</a>
+    <p class="lede">soven is a browser extension that records the sources behind every story as reporters work. A reporter approves each record. Editors get a source repository the newsroom owns, and a clear picture of whose voices make it into the coverage.</p>
+    <a class="btn" href="#pilot">Request a pilot</a>
   </div>
 
   <section id="how">
     <div class="wrap">
       <h2>How It Works</h2>
-      <p class="intro">Reporters don't adopt manual tagging, so Soven reads the story and does the first pass. The reporter stays in charge of every record.</p>
+      <p class="intro">Reporters don't adopt manual tagging, so soven reads the story and does the first pass. The reporter stays in charge of every record.</p>
       <ol class="steps">
-        <li><h3>Capture</h3><p>Soven reads the draft or published story in the browser and suggests each person quoted, with role and context.</p></li>
+        <li><h3>Capture</h3><p>soven reads the draft or published story in the browser and suggests each person quoted, with role and context.</p></li>
         <li><h3>Approve</h3><p>The reporter confirms or corrects each source. Every field the model fills in shows a confidence score.</p></li>
-        <li><h3>Match</h3><p>Soven recognizes sources the newsroom has used before and links them, so one person is one record across stories.</p></li>
+        <li><h3>Match</h3><p>soven recognizes sources the newsroom has used before and links them, so one person is one record across stories.</p></li>
         <li><h3>Report</h3><p>Editors see the newsroom's sourcing in one place: who appears, how often, and who's missing.</p></li>
       </ol>
     </div>
@@ -148,10 +148,10 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
     <div class="wrap two">
       <div>
         <h2>Your Sources Stay Yours</h2>
-        <p class="intro">Source records are sensitive. Soven is built around that.</p>
+        <p class="intro">Source records are sensitive. soven is built around that.</p>
       </div>
       <ul class="checks">
-        <li><strong>The newsroom owns its repository.</strong> Soven holds records only to run the service.</li>
+        <li><strong>The newsroom owns its repository.</strong> soven holds records only to run the service.</li>
         <li><strong>Each newsroom's records are kept separate</strong> unless the organization chooses to combine them.</li>
         <li><strong>Export or delete at any time,</strong> and at the end of a contract.</li>
         <li><strong>A person approves every record.</strong> Nothing enters the repository on the model's word alone.</li>
@@ -162,11 +162,11 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
   <section id="proof">
     <div class="wrap">
       <h2>Where It Comes From</h2>
-      <p class="intro">Soven was built by Natalie Holly Purviance, a journalist and civic technologist in Atlanta, and tested with working reporters from the start.</p>
+      <p class="intro">soven was built by Natalie Holly Purviance, a journalist and civic technologist in Atlanta, and tested with working reporters from the start.</p>
       <div class="proof">
         <div><b>CUNY Newmark AI Journalism Lab</b><span>Built during the Lab's 2026 Builders cohort.</span></div>
         <div><b>Nordic AI Journalism showcase</b><span>One of 4 projects selected from a cohort of 24, September 2026.</span></div>
-        <div><b>In newsroom use</b><span>Reporters at two newsrooms have used it on published stories since September 2026.</span></div>
+        <div><b>Built by a journalist</b><span>Designed by an investigative reporter trained in data journalism at Columbia's Lede Program.</span></div>
       </div>
     </div>
   </section>
@@ -175,8 +175,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
     <div class="wrap">
       <div class="cta">
         <h2>Run a Pilot</h2>
-        <p>Pilots run across one or more newsrooms, include onboarding and support, and end with a source audit report for leadership. Tell us about your newsroom and we'll set up a demo.</p>
-        <a class="btn" href="mailto:hello@usesoven.com?subject=Soven%20pilot">hello@usesoven.com</a>
+        <p>Pilots run across one or more newsrooms, include onboarding and support, and end with a source audit report for leadership. Email <strong>hello@usesoven.com</strong> with your newsroom's name and what you'd like to learn about your sourcing, and we'll set up a demo.</p>
+        <a class="btn" href="mailto:hello@usesoven.com?subject=soven%20pilot">Email us</a>
       </div>
     </div>
   </section>
